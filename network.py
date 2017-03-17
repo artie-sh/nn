@@ -1,3 +1,5 @@
+#http://iamtrask.github.io/2015/07/12/basic-python-network/
+
 import numpy as np
 
 # sigmoid function
@@ -7,20 +9,20 @@ def nonlin(x, deriv=False):
     return 1 / (1 + np.exp(-x))
 
 # input dataset
-X = np.array([[0, 0, 1],
-              [0, 1, 1],
-              [1, 0, 1],
-              [1, 1, 1]])
+X = np.array([[4, 3, 6],
+              [7, 11, 7],
+              [3, 0, 81],
+              [4, 21, 9]])
 
 # output dataset
-y = np.array([[0, 0, 1, 1]]).T
+y = np.array([[4, 7, 3, 4]]).T
 
 # seed random numbers to make calculation
 # deterministic (just a good practice)
 np.random.seed(100)
 
 # initialize weights randomly with mean 0
-syn0 = 2 * np.random.random((3, 1)) - 1
+syn0 = 100 * np.random.random((3, 1)) - 1
 
 for iter in xrange(10000):
     #forward propagation
@@ -39,3 +41,4 @@ for iter in xrange(10000):
 
 print "Output After Training:"
 print l1
+print 'the end'
